@@ -126,7 +126,7 @@ function login() {
         msg.style.color = data.mensaje.startsWith("Inicio") ? "green" : "red";
 
         if (data.mensaje.startsWith("Inicio de sesión exitoso")) {
-            window.location.href = "dulceria.html";
+            window.location.href = "dulceria/index.html";
         }
     })
     .catch(error => {
