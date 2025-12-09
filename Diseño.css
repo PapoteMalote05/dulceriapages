@@ -11,6 +11,43 @@
   --pinkGrad: linear-gradient(135deg,#ffd6ea,#ffb6d5);
 }
 
+/* --- Ajuste para que fila sea responsive --- */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --- Input de URL responsive --- */
+#apiUrlInput {
+  width: 100%;          /* que ocupe todo el ancho disponible */
+  max-width: 100%;      /* evita desbordes */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* --- Botón Guardar responsive --- */
+.row button {
+  flex: 1;              /* que se adapten al espacio */
+  min-width: 120px;     /* tamaño mínimo para que no se encojan demasiado */
+}
+
+/* --- Ajustes especiales para pantallas pequeñas --- */
+@media (max-width: 600px) {
+  #apiUrlInput {
+    font-size: 16px;
+  }
+
+  .row {
+    flex-direction: column; /* botones y caja se ponen uno debajo del otro */
+  }
+
+  .row button {
+    width: 100%;
+  }
+}
+
+
 *{ box-sizing:border-box; margin:0; padding:0; }
 html,body{
   height:100%;
