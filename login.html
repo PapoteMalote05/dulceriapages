@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dulce</title>
+  <link href="Diseño.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="center-wrap" id="loginScreen">
+    <div class="card login-card">
+      <div class="visual">
+        <img src="Imagenes/Dulce.png" alt="dulceria kawaii" class="illustration">
+        <h2>Dulceria kawaii</h2>
+        <p class="tag">Un lugar lleno de dulces y sonrisas</p>
+      </div>
+      <div class="form-area">
+        <h3>Iniciar Sesión</h3>
+        <form id="loginForm" onsubmit="return false;">
+          <label for="loginUser">Usuario</label>
+          <input id="loginUser" type="text" placeholder="" required>
+          <label for="loginPass">Contraseña</label>
+          <input id="loginPass" type="password" placeholder="" required>
+          <div class="row">
+			<button class="btn primary" id="btnLogin" type="button" onclick="login()">Ingresar</button>
+            <button class="btn ghost" id="btnToRegister" type="button">Registrar</button>
+			<input type="text" id="apiUrlInput" placeholder="URL del servidor" />
+			<button onclick="guardarApi()">Guardar servidor</button>
+
+          </div>
+          <p id="loginMsg" class="small-note"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="center-wrap hidden" id="registerScreen">
+    <div class="card login-card">
+      <div class="visual">
+        <img src="Imagenes/Dulce.png" alt="registro kawaii" class="illustration">
+        <h2>Dulceria kawaii</h2>
+        <p class="tag">un lugar lleno de dulces y sonrisas</p>
+      </div>
+      <div class="form-area">
+        <h3>Registro</h3>
+        <form id="registerForm" onsubmit="return false;">
+          <label for="regUser">Usuario</label>
+          <input id="regUser" type="text" placeholder="" required>
+          <label for="regPass">contrasena</label>
+          <input id="regPass" type="password" placeholder="" required>
+          <label for="regPass2">Confirmar contrasena</label>
+          <input id="regPass2" type="password" placeholder="" required>
+          <div class="row">
+            <button class="btn primary" id="btnRegister" type="button">Crear usuario</button>
+            <button class="btn ghost" id="btnBackLogin" type="button">Volver</button>
+          </div>
+          <p id="regMsg" class="small-note"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="Funcion.js"></script>
+
+</body>
+</html>
