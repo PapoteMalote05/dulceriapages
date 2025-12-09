@@ -1,4 +1,5 @@
-let API_URL = "https://mi-api.dulces.com"; // URL del túnel
+// ================= CONFIGURACIÓN API (EN MEMORIA) ======================
+let API_URL = "http://localhost:8080"; // URL por defecto
 
 function guardarApi() {
     const url = document.getElementById("apiUrlInput").value.trim();
@@ -41,7 +42,8 @@ document.getElementById("btnBackLogin")?.addEventListener("click", function () {
 
 
 //================= REGISTRAR USUARIO =====================
-async function registrarUsuario() {
+document.getElementById("btnRegister")?.addEventListener("click", async function () {
+
   if (!API_URL) {
     alert("⚠ Primero debes configurar el servidor.");
     return;
@@ -69,7 +71,7 @@ async function registrarUsuario() {
   const usuario = { nombre: nombre, contrasena: pass1 };
 
   try {
-    const response = await fetch(`${API_URL}/api/usuarios/registrar`, {
+    const response = await fetch(API_URL + "/api/usuarios/registrar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(usuario)
@@ -89,15 +91,13 @@ async function registrarUsuario() {
     msg.textContent = "Ocurrió un error al registrar.";
     msg.style.color = "red";
   }
-}
-
-// Conectar el botón con la función
-document.getElementById("btnRegister")?.addEventListener("click", registrarUsuario);
+});
 
 
 //================= LOGIN =====================
 
 function login() {
+
     if (!API_URL) {
         alert("⚠ Primero debes guardar la URL del servidor");
         return;
@@ -115,7 +115,7 @@ function login() {
         return;
     }
 
-    fetch(`${API_URL}/api/usuarios/login`, {
+    fetch(API_URL + "/api/usuarios/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nombre: nombre, contrasena: contrasena })
@@ -185,6 +185,7 @@ async function apiVentaCarrito(carrito) {
 function cerrarSesion() {
     window.location.href = "login.html";
 }
+
 
 let dulces = [];
 let carrito = [];
