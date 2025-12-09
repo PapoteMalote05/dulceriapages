@@ -1,5 +1,5 @@
 // ================= CONFIGURACIÓN API (EN MEMORIA) ======================
-let API_URL = "http://localhost:8080"; // URL por defecto
+let API_URL = "https://mi-api.dulces.com"; // URL del túnel
 
 function guardarApi() {
     const url = document.getElementById("apiUrlInput").value.trim();
